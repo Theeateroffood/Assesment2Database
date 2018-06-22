@@ -39,7 +39,7 @@ namespace Assesment2APITrue.Controllers
         // GET: TourEvents/Create
         public ActionResult Create()
         {
-            ViewBag.TourName = new SelectList(db.Tours, "TourName", "Description");
+            ViewBag.TourName = new SelectList(db.Tours, "TourName", "TourName");
             return View();
         }
 
@@ -57,7 +57,7 @@ namespace Assesment2APITrue.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.TourName = new SelectList(db.Tours, "TourName", "Description", tourEvent.TourName);
+            ViewBag.TourName = new SelectList(db.Tours, "TourName", "TourName", tourEvent.TourName);
             return View(tourEvent);
         }
 
@@ -73,7 +73,7 @@ namespace Assesment2APITrue.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.TourName = new SelectList(db.Tours, "TourName", "Description", tourEvent.TourName);
+            ViewBag.TourName = new SelectList(db.Tours, "TourName", "TourName", tourEvent.TourName);
             return View(tourEvent);
         }
 
@@ -90,7 +90,7 @@ namespace Assesment2APITrue.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.TourName = new SelectList(db.Tours, "TourName", "Description", tourEvent.TourName);
+            ViewBag.TourName = new SelectList(db.Tours, "TourName", "TourName", tourEvent.TourName);
             return View(tourEvent);
         }
 
