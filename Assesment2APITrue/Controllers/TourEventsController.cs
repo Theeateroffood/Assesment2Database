@@ -36,6 +36,18 @@ namespace Assesment2APITrue.Controllers
             return View(tourEvent);
         }
 
+        // GET: Bookings/Details/5
+        public ActionResult Booking(int? id)
+        {
+            var bookings = db.Bookings.Include(b => b.Client).Include(b => b.Tour).Include(b => b.TourEvent);
+            if (bookings == null)
+            {
+                return HttpNotFound();
+            }
+            bookings = bookings.Where(x => x.TourEventId == id);
+            return View(bookings.ToList());
+        }
+
         // GET: TourEvents/Create
         public ActionResult Create()
         {

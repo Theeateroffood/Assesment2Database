@@ -12,19 +12,19 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.ClientId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TourName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TourEventId)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Payment)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.DateBooked)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Client.Sname)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Tour.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TourEvent.TourName)
         </th>
         <th></th>
     </tr>
@@ -32,19 +32,19 @@
 @foreach (var item in Model) {
     <tr>
         <td>
+            @Html.DisplayFor(modelItem => item.ClientId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TourName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TourEventId)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.Payment)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.DateBooked)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Client.Sname)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Tour.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TourEvent.TourName)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.BookingId }) |

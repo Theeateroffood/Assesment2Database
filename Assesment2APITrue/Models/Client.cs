@@ -11,7 +11,8 @@ namespace Assesment2APITrue.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Client
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,10 +20,18 @@ namespace Assesment2APITrue.Models
         {
             this.Bookings = new HashSet<Booking>();
         }
-    
+        [Required]
+
         public int ClientId { get; set; }
+        [StringLength(maximumLength: 50)]
+        [Required]
         public string Sname { get; set; }
+        [StringLength(maximumLength: 50)]
+        [Required]
         public string Fname { get; set; }
+        [Required]
+        [RegularExpression("M|F")]
+        
         public string Gender { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -39,9 +39,9 @@ namespace Assesment2APITrue.Controllers
         // GET: Bookings/Create
         public ActionResult Create()
         {
-            ViewBag.ClientId = new SelectList(db.Clients, "ClientId", "Sname");
-            ViewBag.TourName = new SelectList(db.Tours, "TourName", "Description");
-            ViewBag.TourEventId = new SelectList(db.TourEvents, "TourEventId", "TourName");
+            ViewBag.ClientId = new SelectList(db.Clients, "ClientId", "ClientId");
+            ViewBag.TourName = new SelectList(db.Tours, "TourName", "TourName");
+            ViewBag.TourEventId = new SelectList(db.TourEvents, "TourEventId", "TourEventId");
             return View();
         }
 
@@ -59,9 +59,9 @@ namespace Assesment2APITrue.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ClientId = new SelectList(db.Clients, "ClientId", "Sname", booking.ClientId);
-            ViewBag.TourName = new SelectList(db.Tours, "TourName", "Description", booking.TourName);
-            ViewBag.TourEventId = new SelectList(db.TourEvents, "TourEventId", "TourName", booking.TourEventId);
+            ViewBag.ClientId = new SelectList(db.Clients, "ClientId", "ClientId", booking.ClientId);
+            ViewBag.TourName = new SelectList(db.Tours, "TourName", "TourName", booking.TourName);
+            ViewBag.TourEventId = new SelectList(db.TourEvents, "TourEventId", "TourEventId", booking.TourEventId);
             return View(booking);
         }
 
@@ -77,9 +77,9 @@ namespace Assesment2APITrue.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.ClientId = new SelectList(db.Clients, "ClientId", "Sname", booking.ClientId);
-            ViewBag.TourName = new SelectList(db.Tours, "TourName", "Description", booking.TourName);
-            ViewBag.TourEventId = new SelectList(db.TourEvents, "TourEventId", "TourName", booking.TourEventId);
+            ViewBag.ClientId = new SelectList(db.Clients, "ClientId", "ClientId", booking.ClientId);
+            ViewBag.TourName = new SelectList(db.Tours, "TourName", "TourName", booking.TourName);
+            ViewBag.TourEventId = new SelectList(db.TourEvents, "TourEventId", "TourEventId", booking.TourEventId);
             return View(booking);
         }
 
@@ -96,9 +96,9 @@ namespace Assesment2APITrue.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.ClientId = new SelectList(db.Clients, "ClientId", "Sname", booking.ClientId);
-            ViewBag.TourName = new SelectList(db.Tours, "TourName", "Description", booking.TourName);
-            ViewBag.TourEventId = new SelectList(db.TourEvents, "TourEventId", "TourName", booking.TourEventId);
+            ViewBag.ClientId = new SelectList(db.Clients, "ClientId", "ClientId", booking.ClientId);
+            ViewBag.TourName = new SelectList(db.Tours, "TourName", "TourName", booking.TourName);
+            ViewBag.TourEventId = new SelectList(db.TourEvents, "TourEventId", "TourEventId", booking.TourEventId);
             return View(booking);
         }
 
